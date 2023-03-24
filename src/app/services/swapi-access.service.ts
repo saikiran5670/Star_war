@@ -15,7 +15,7 @@ export class SwapiAccessService {
   constructor(private http: HttpClient, private loader: LoaderService) { 
     this.loader.show()
   }
-
+// logging.
   getFilmsList(): Observable<Film[]> {
     return this.http.get<FilmResponse>(`http://swapi.dev/api/films`)
       .pipe(map((movie) => movie.results),
