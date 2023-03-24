@@ -1,0 +1,42 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Name: {{selectedActorDetials.name}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-grid-list cols="8" rowHeight="150px">
+            <mat-grid-tile >
+                <span class="mat-body-strong">Gender</span>
+                <span class="mat-body">{{selectedActorDetials.gender}}</span>
+            </mat-grid-tile>
+             <mat-grid-tile>
+                <span class="mat-body-strong">Birth Year</span>
+                <span class="mat-body">{{selectedActorDetials.birth_year}}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="mat-body-strong">Height</span>
+                <span class="mat-body">{{selectedActorDetials.height}}</span>
+            </mat-grid-tile>
+            <mat-grid-tile >
+                <span class="mat-body-strong">Mass</span>
+                <span class="mat-body">{{selectedActorDetials.mass}}</span>
+            </mat-grid-tile>
+            <mat-grid-tile >
+                <span class="mat-body-strong">Skin Color</span>
+                <span class="mat-body">{{selectedActorDetials.skin_color}}</span>
+            </mat-grid-tile>
+            <mat-grid-tile >
+                <span class="mat-body-strong">Eye Color</span>
+                <span class="mat-body">{{selectedActorDetials.eye_color}}</span>
+            </mat-grid-tile>
+            <mat-grid-tile >
+                <span class="mat-body-strong">Eye Color</span>
+                <span class="mat-body">{{selectedActorDetials.height}}</span>
+            </mat-grid-tile> 
+            <mat-grid-tile >
+                <span class="mat-body-strong">Total Films</span>
+                <span class="mat-body">{{selectedActorDetials.films.length}}</span>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <app-film-by-char-list [film]="selectedActorDetials"></app-film-by-char-list>
+    </mat-card-content>
+</mat-card>

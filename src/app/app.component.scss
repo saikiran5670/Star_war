@@ -1,0 +1,15 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+  
+  mat-icon {
+    margin-right: 8px;
+    font-size: 32px;
+  }
+  
+  ::ng-deep.mat-grid-tile-content{
+    flex-direction: column !important;
+    .mat-body-strong{
+        margin-bottom: 1.5rem;
+    }
+}

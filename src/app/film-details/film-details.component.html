@@ -1,0 +1,32 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Movie Name: {{selectedFilmDetials.title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p class="mat-body-strong"> Synopisis: </p>
+        <p>{{selectedFilmDetials.opening_crawl}}</p>
+        <mat-grid-list cols="5" rowHeight="150px">
+            <mat-grid-tile >
+                <span class="mat-body-strong">Director</span>
+                <span class="mat-body">{{selectedFilmDetials.director}}</span>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <span class="mat-body-strong">Producer</span>
+                <span class="mat-body">{{selectedFilmDetials.producer}}</span>
+            </mat-grid-tile>
+            <mat-grid-tile >
+                <span class="mat-body-strong">Episode No</span>
+                <span class="mat-body">{{selectedFilmDetials.episode_id}}</span>
+            </mat-grid-tile>
+            <mat-grid-tile >
+                <span class="mat-body-strong">Released On</span>
+                <span class="mat-body">{{selectedFilmDetials.release_date}}</span>
+            </mat-grid-tile>
+            <mat-grid-tile >
+                <span class="mat-body-strong">Total Characters</span>
+                <span class="mat-body">{{selectedFilmDetials.characters.length}}</span>
+            </mat-grid-tile>
+        </mat-grid-list>
+            <app-character-details ></app-character-details>
+    </mat-card-content>
+</mat-card>
