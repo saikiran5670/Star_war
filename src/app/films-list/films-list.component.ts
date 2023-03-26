@@ -11,10 +11,9 @@ import { SwapiAccessService } from '../services/swapi-access.service';
 export class FilmsListComponent implements OnInit{
   films: any
 constructor(private accessMovies : SwapiAccessService, private loader: LoaderService){
-
+  this.loader.show();
 }
 ngOnInit(): void {
-  this.loader.show();
     this.accessMovies.getFilmsList().subscribe((film:Film[])=>{
       this.films = film
     });

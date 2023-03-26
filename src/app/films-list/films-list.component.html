@@ -1,17 +1,15 @@
-
-    <div class="example-card" fxLayout="row wrap" fxLayoutAlign="space-around">
-        <mat-card fxFlex="33" style="margin-bottom: 24px;" *ngFor="let film of films; let i = index">
-            <mat-card-header>
-            <mat-card-title>{{film.title}}</mat-card-title>
-            <mat-card-subtitle>Episode no: {{film.episode_id}}</mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
-            <p>Episode Overview</p>
-            <p>{{film.opening_crawl}}</p>
-          </mat-card-content>
-          <mat-card-actions fxLayoutAlign="end">
-        <a mat-list-item [routerLink]="['/films-details']" [queryParams]="{ id: i+1 }">More about the Episode</a>
-          </mat-card-actions>
-        </mat-card>   
-      </div>
-      
+<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-around">
+  <mat-card fxFlex="33"   *ngFor="let film of films; let i = index">
+    <mat-card-header>
+      <mat-card-title>{{film.title}}</mat-card-title>
+      <mat-card-subtitle>Episode no: {{film.episode_id}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Episode Overview</p>
+      <p>{{film.opening_crawl}}</p>
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="end">
+      <a mat-list-item [routerLink]="['/films-details']" [queryParams]="{ id: i+1 }">More about the Episode</a>
+    </mat-card-actions>
+  </mat-card>   
+</div>

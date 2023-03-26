@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoaderService } from '../services/loader.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-spinner',
@@ -7,18 +8,19 @@ import { LoaderService } from '../services/loader.service';
   styleUrls: ['./spinner.component.scss']
 })
 export class SpinnerComponent implements OnInit {
+  isLoading: boolean = false;
+  loadingSubscription!: Subscription;
 
-isLoading!: boolean;
-
-  constructor(private loader : LoaderService) { 
-    console.log("spinner val", this.loader.loadingSubject.value)
-
-  }
+  constructor(private loader: LoaderService) { }
 
   ngOnInit() {
-    console.log("spinner val", this.loader.loadingSubject.value)
-    this.loader.loading$.subscribe((a:any) => 
-         this.isLoading = a
-   )
+    this.loadingSubscription = this.loader.loading$.subscribe((load: boolean) => {
+      alert("in here")
+      this.isLoading = load;
+    });
+  }
+
+  ngOnDestroy() {
+    this.loadingSubscription.unsubscribe();
   }
 }

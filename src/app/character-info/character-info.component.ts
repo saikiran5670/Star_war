@@ -19,14 +19,13 @@ export class CharacterInfoComponent implements OnInit {
   pageSelection = 1;
   sub: any;
   selectedActorDetials: any;
-  constructor(private accessMovies: SwapiAccessService, private activateRouter: ActivatedRoute) {
+  constructor(public accessMovies: SwapiAccessService, public activateRouter: ActivatedRoute) {
   }
   ngOnInit(): void {
     this.sub = this.activateRouter
       .queryParams
       .subscribe((params: any) => {
         this.paramvalue = params.data
-        console.log(this.paramvalue)
       });
     this.accessMovies.getCharactersList(this.paramvalue).subscribe((char: CharacterResponse) => {
       this.selectedActorDetials = char;

@@ -15,14 +15,13 @@ export class FilmDetailsComponent implements OnInit{
   selectedFilmDetials!: Film;
   sub: any;
   paramvalue: any;
-  constructor(private accessMovies: SwapiAccessService, private activateRouter:ActivatedRoute, private loader : LoaderService){}
+  constructor(public accessMovies: SwapiAccessService, private activateRouter:ActivatedRoute, public loader : LoaderService){}
   ngOnInit(): void {
-    this.loader.show();
+    this.loader.show()
       this.sub = this.activateRouter
         .queryParams
         .subscribe((params:any) => {
           this.paramvalue = params.id
-          console.log(this.paramvalue)
         });
 
         this.accessMovies.getFilmById(this.paramvalue).subscribe((film:any)=>{

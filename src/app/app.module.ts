@@ -23,8 +23,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
     CharacterDetailsComponent,
     CharacterInfoComponent,
     FilmByCharListComponent,
-    SpinnerComponent
-  ],
+    SpinnerComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
