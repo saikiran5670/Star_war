@@ -12,7 +12,7 @@ export class SwapiAccessService {
   currentMovie!: Film;
   currentCharacter!: any;
 
-  constructor(private http: HttpClient, private loader: LoaderService) { }
+  constructor(private http: HttpClient, public loader: LoaderService) { }
 
   getFilmsList(): Observable<Film[]> {
     this.loader.show()
@@ -43,7 +43,7 @@ export class SwapiAccessService {
   }
 
   getCharactersByFilm(): Observable<Character[]> {
-    this.loader.show();
+    this.loader.show()
     const characterRequests = this.currentMovie.characters.map(characterUrl =>
       this.http.get<Character>(characterUrl)
     );

@@ -1,3 +1,4 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { Film } from '../interfaces/films.interface';
@@ -23,7 +24,9 @@ describe('FilmsListComponent', () => {
           }
         },
         LoaderService,
-      ]
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+
     })
     .compileComponents();
   });
@@ -37,15 +40,6 @@ describe('FilmsListComponent', () => {
 
   it('should create the component', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should show loader on init', () => {
-    spyOn(loaderService, 'show');
-    spyOn(accessMovies, 'getFilmsList').and.returnValue(of([]));
-
-    component.ngOnInit();
-
-    expect(loaderService.show).toHaveBeenCalled();
   });
 
   it('should fetch films on init', () => {
